@@ -1,0 +1,274 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=block");
+
+@page {
+  size: letter;
+  margin: 0.5in;
+
+  @bottom-right {
+    content: counter(page);
+    font: 8pt Georgia, 'Times New Roman', serif;
+    color: #64748b;
+  }
+}
+
+:root {
+  --report-font: Georgia;
+  --report-code-font: 'Fira Code';
+  --report-paper: #ffffff;
+  --report-ink: #414958;
+  --report-code-ink: #1f2328;
+  --report-code-operator: #30363d;
+  --report-comment: #57606a;
+  --report-keyword: #7b1fa2;
+  --report-call: #0050a4;
+  --report-module: #00646b;
+  --report-attribute: #9a235b;
+  --report-number: #9a3e0f;
+  --report-string: #116329;
+  --report-reference: #7c8290;
+  --report-grid: #78808c;
+  --report-accent: #86a8cf;
+  --report-muted: #b5a1c7;
+  --report-green: #8fb8ad;
+  --report-rust: #dfa58f;
+  --jp-content-font-family: var(--report-font), 'Times New Roman', serif;
+  --jp-content-font-size1: 10pt;
+  --jp-content-line-height: 1.45;
+  --jp-code-font-family: var(--report-code-font), Menlo, Consolas, monospace;
+  --jp-code-font-size: 9pt;
+  --jp-code-line-height: 1.35;
+  --jp-content-font-color1: var(--report-ink);
+}
+
+html,
+body.jp-Notebook,
+main {
+  margin: 0;
+  padding: 0;
+  background: var(--report-paper);
+}
+
+.jp-Notebook-cell {
+  padding: 0;
+  margin: 0 0 8pt;
+}
+
+.jp-InputArea,
+.jp-OutputArea-child {
+  display: block;
+}
+
+.jp-InputArea-editor,
+.jp-OutputArea-output {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.jp-CodeCell .jp-Cell-inputWrapper,
+.jp-CodeCell .jp-InputArea,
+.jp-CodeCell .jp-InputArea-editor,
+.jp-CodeCell .cm-editor,
+.jp-CodeCell .highlight {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.jp-OutputArea-child .jp-OutputArea-output {
+  display: block;
+  margin-left: 0;
+}
+
+.jp-RenderedHTMLCommon {
+  padding: 0;
+  font-family: var(--jp-content-font-family);
+  font-size: var(--jp-content-font-size1);
+  line-height: var(--jp-content-line-height);
+}
+
+.jp-RenderedHTMLCommon :is(h1, h2, h3, h4) {
+  font-family: var(--jp-content-font-family);
+  color: var(--report-ink);
+  font-weight: 400;
+  line-height: 1.2;
+  break-after: avoid;
+}
+
+.jp-RenderedHTMLCommon h1 {
+  font-size: 23pt;
+  margin: 0 0 14pt;
+}
+
+.jp-RenderedHTMLCommon h2 {
+  font-size: 15pt;
+  margin: 16pt 0 9pt;
+}
+
+.jp-RenderedHTMLCommon h3 {
+  font-size: 15pt;
+  margin: 0 0 8pt;
+}
+
+.jp-RenderedHTMLCommon h4 {
+  font-size: 11.5pt;
+  margin: 12pt 0 7pt;
+}
+
+.jp-RenderedHTMLCommon :is(p, ul, ol) {
+  margin-top: 0;
+  margin-bottom: 8pt;
+  orphans: 3;
+  widows: 3;
+}
+
+.jp-RenderedHTMLCommon> :last-child {
+  margin-bottom: 0;
+}
+
+.jp-RenderedHTMLCommon li {
+  margin-bottom: 3pt;
+}
+
+.jp-RenderedHTMLCommon a {
+  color: #205a80;
+  text-decoration: none;
+}
+
+.jp-RenderedHTMLCommon code {
+  font-size: 0.85em;
+  background: #f2f4f7;
+  padding: 1pt 3pt;
+}
+
+.jp-InputArea-editor {
+  border: 0.5pt solid #dce1e7;
+  border-radius: 3pt;
+}
+
+.cm-editor.cm-s-jupyter .highlight pre,
+.jp-OutputArea-output pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-family: var(--jp-code-font-family);
+  font-size: var(--jp-code-font-size);
+  font-weight: 500;
+  line-height: var(--jp-code-line-height);
+  font-variant-ligatures: contextual;
+  font-feature-settings: 'calt' 1, 'liga' 1;
+  orphans: 3;
+  widows: 3;
+}
+
+.cm-editor.cm-s-jupyter .highlight pre {
+  padding: 9pt 10pt;
+}
+
+.jp-RenderedText {
+  padding: 5pt 0;
+}
+
+.jp-RenderedHTMLCommon table {
+  width: 100%;
+  table-layout: auto;
+  border-collapse: collapse;
+  font: 9pt/1.5 var(--jp-content-font-family);
+  font-variant-numeric: tabular-nums;
+  margin: 10pt 0 14pt;
+  break-inside: avoid;
+}
+
+.jp-RenderedHTMLCommon :is(th, td) {
+  padding: 4pt 7pt;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.jp-RenderedHTMLCommon thead th {
+  color: #172b43;
+  border-bottom: 1pt solid #64748b;
+  font-weight: 600;
+}
+
+.jp-RenderedHTMLCommon thead th:first-child {
+  width: 1%;
+}
+
+.jp-RenderedHTMLCommon tbody tr:nth-child(even) {
+  background: #f3f5f7;
+}
+
+.jp-RenderedHTMLCommon tbody tr:last-child td {
+  border-bottom: 0.5pt solid #cbd5e1;
+}
+
+.jp-RenderedHTMLCommon caption {
+  text-align: left;
+  font: 9pt/1.4 var(--jp-content-font-family);
+  color: #526174;
+  padding-bottom: 7pt;
+}
+
+.jp-RenderedSVG {
+  padding: 6pt 0 12pt;
+  text-align: center;
+  break-inside: avoid;
+}
+
+.jp-RenderedSVG img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: auto;
+}
+
+.jp-RenderedMarkdown img {
+  display: block;
+  max-width: 100%;
+  max-height: 8.6in;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  margin: 10pt auto;
+  break-inside: avoid;
+}
+
+.MJXc-display,
+.MathJax_Display,
+mjx-container[display='true'] {
+  margin: 12pt 0 !important;
+  break-inside: avoid;
+}
+
+@media print {
+
+  .report-appendix,
+  .report-page {
+    break-before: page;
+  }
+
+  .jp-OutputArea,
+  .jp-CodeCell {
+    break-inside: auto;
+  }
+
+  .jp-OutputArea-child {
+    break-inside: avoid;
+  }
+
+  .jp-OutputArea-child:has(.report-code) {
+    break-inside: auto;
+  }
+
+  .jp-OutputArea:has(.jp-RenderedSVG)>.jp-OutputArea-child:has(.jp-RenderedSVG) {
+    break-before: auto;
+    break-inside: avoid;
+  }
+}
+.report-page-break {
+  break-before: page;
+}
