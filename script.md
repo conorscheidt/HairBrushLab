@@ -3,7 +3,7 @@
 
 **Vivian, 0:00-0:32** (force-time graphs/traces)
 
-Mr. Shada, we used 15 of our 16 files and took the peak load as each brush's strength. In file 5 the load flattens near 199 pounds, and the video shows the fixture moving while the brush stays in one piece, so that peak isn't actually a joint failure. File 6 retests the same brush, so we counted it once. We kept brush 2 at 107. Even though it's below spec, it's still a valid failure.
+Mr. Shada, we used 15 of our 16 files and took the peak load as each brush's strength. In file 5 the load flattens near 199 pounds, and the video shows the brush twisting in the fixture but staying in one piece, so that peak isn't actually a joint failure. File 6 retests the same brush, so we counted it once. We kept brush 2 at 107. Even though it's below spec, it's still a valid failure.
 
 **Mosawer, 0:32-1:04** (assumptions)
 

@@ -1,3 +1,5 @@
+from itertools import count
+
 import matplotlib.pyplot as plt
 import pandas as pd
 from cycler import cycler
@@ -9,14 +11,24 @@ from pandas.io.formats.style import Styler
 
 from .theme import style_values
 
+_table_ids = count()
+
+
+class ReportTable(Styler):
+    """Styler with a stable text repr, so re-exported notebooks only diff on content."""
+
+    def __repr__(self) -> str:
+        return f"<ReportTable {self.uuid}>"
+
 
 def use_report_style() -> None:
     theme = style_values()
     font = theme["report-font"].strip("'\"")
-    set_matplotlib_formats("svg")
+    set_matplotlib_formats("svg", metadata={"Date": None})
     plt.rcParams.update(  # pyright: ignore[reportUnknownMemberType]
         {
             "svg.fonttype": "none",
+            "svg.hashsalt": "lab-report",
             "font.family": font,
             "font.size": 10,
             "text.color": theme["report-ink"],
@@ -60,9 +72,9 @@ def plot_reference(
     line(value, color=style_values()["report-reference"], ls="--", lw=0.8, label=label)
 
 
-def styled_table(table: pd.DataFrame, *, precision: int = 3) -> Styler:
+def styled_table(table: pd.DataFrame, *, precision: int = 3) -> ReportTable:
     font = style_values()["report-font"]
-    styled = table.style
+    styled = ReportTable(table, uuid=f"report{next(_table_ids)}")
     styled.hide(axis="index")
     styled.format(precision=precision)
     styled.set_properties(

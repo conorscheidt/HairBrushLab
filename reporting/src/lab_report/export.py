@@ -40,8 +40,13 @@ def export_notebook(
     notebook = notebook.resolve()
     output = output or notebook.parent / "output" / "pdf" / f"{notebook.stem}.pdf"
     document = nbformat.read(notebook, as_version=4)
+    for cell in document.cells:
+        cell.metadata.pop("execution", None)
     NotebookClient(
-        document, timeout=120, resources={"metadata": {"path": str(notebook.parent)}}
+        document,
+        timeout=120,
+        record_timing=False,
+        resources={"metadata": {"path": str(notebook.parent)}},
     ).execute()
     nbformat.write(document, notebook)
     config = Config(
