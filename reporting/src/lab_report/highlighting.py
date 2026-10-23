@@ -55,7 +55,7 @@ class PythonRoleLexer(PythonLexer):
             return starts[row] + len(prefix)
 
         for node in ast.walk(tree):
-            if isinstance(node, ast.Import):
+            if isinstance(node, (ast.Import, ast.ImportFrom)):
                 modules.update(a.asname or a.name.split(".")[0] for a in node.names)
             elif isinstance(node, ast.Attribute):
                 end = position(node, "end_col_offset", "end_lineno")

@@ -246,11 +246,6 @@ mjx-container[display='true'] {
 
 @media print {
 
-  .report-appendix,
-  .report-page {
-    break-before: page;
-  }
-
   .jp-OutputArea,
   .jp-CodeCell {
     break-inside: auto;
@@ -263,12 +258,8 @@ mjx-container[display='true'] {
   .jp-OutputArea-child:has(.report-code) {
     break-inside: auto;
   }
-
-  .jp-OutputArea:has(.jp-RenderedSVG)>.jp-OutputArea-child:has(.jp-RenderedSVG) {
-    break-before: auto;
-    break-inside: avoid;
-  }
 }
+
 .report-page-break {
   break-before: page;
 }

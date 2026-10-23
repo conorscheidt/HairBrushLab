@@ -5,7 +5,6 @@ import nbformat
 import typer
 from nbclient import NotebookClient
 from nbconvert import WebPDFExporter
-from nbconvert.writers.files import FilesWriter
 from traitlets.config import Config
 
 from .highlighting import PastelStyle, RoleHighlight
@@ -76,14 +75,12 @@ def export_notebook(
             )
         },
     )
-    pdf, resources = exporter.from_notebook_node(
+    pdf, _ = exporter.from_notebook_node(
         document,
         resources={"report_css": CSS_PATH.read_text(encoding="utf-8")},
     )
     output.parent.mkdir(parents=True, exist_ok=True)
-    FilesWriter(build_directory=str(output.parent)).write(  # pyright: ignore[reportUnknownMemberType]
-        pdf, resources, notebook_name=output.stem
-    )
+    output.write_bytes(pdf)
     typer.echo(output.resolve())
 
 

@@ -918,7 +918,6 @@ dependencies = [
     { name = "nbformat" },
     { name = "pandas" },
     { name = "pygments" },
-    { name = "tinycss2" },
     { name = "typer" },
 ]
 
@@ -932,7 +931,6 @@ requires-dist = [
     { name = "nbformat", specifier = ">=5.11.1" },
     { name = "pandas", specifier = ">=3.0.6" },
     { name = "pygments", specifier = ">=2.21.0" },
-    { name = "tinycss2", specifier = ">=1.5.1" },
     { name = "typer", specifier = ">=0.27.3" },
 ]
 
